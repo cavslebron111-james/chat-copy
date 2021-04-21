@@ -4,17 +4,27 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "concurrently": "^5.2.0",
     "mysql": "^2.16.0",
+    "nodemon": "^2.0.4",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
+    "react-icons": "^2.2.5",
+    "react-paypal-express-checkout": "^1.0.5",
     "react-router-dom": "^5.0.0",
     "react-scripts": "2.1.8",
-    "styled-components": "^4.2.0"
+    "socket.io": "^2.3.0",
+    "socket.io-client": "^2.3.0",
+    "styled-components": "^4.2.0",
+    "uuid": "^8.1.0",
+    "uuidv4": "^6.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently 'npm run react' 'npm run server'",
+    "react": "react-scripts start",
+    "server": "nodemon src/server/index.js",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
